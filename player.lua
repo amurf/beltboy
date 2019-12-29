@@ -10,6 +10,7 @@ function make_player(x, y)
 
     return pl
 end
+
 function update_player(player)
     player.grounded = fget(mget(player.x, player.y + 1), 0)
 
@@ -39,11 +40,3 @@ end
 function draw_player(player)
     spr(player.sprite, player.x * 8, player.y * 8, 1, 1, false, false)
 end
-
-function solid (x, y)
-    if (x < 0 or x >= 128 ) then
-        return true end
-
-        val = mget(x, y)
-        return fget(val, 0)
-    end
