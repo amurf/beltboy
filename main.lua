@@ -24,9 +24,8 @@ function _draw()
     cls()
     map(0, 0, 0, 0)
 
-    print(flr(jump_timer), 0, 0)
     -- wip camera
-    camera_offset = 5 * 8
+    camera_offset = 3 * 8
     camera(player.x * 8 - camera_offset , 0)
 
     -- slightly insane
