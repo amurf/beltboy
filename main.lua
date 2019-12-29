@@ -1,5 +1,3 @@
-
-
 function _init()
     player = {}
 
