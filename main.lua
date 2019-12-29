@@ -25,8 +25,11 @@ function _draw()
     map(0, 0, 0, 0)
 
     -- wip camera
-    camera(player.x * 8 - 5 * 8, 0)
+    camera_offset = 5 * 8
+    camera(player.x * 8 - camera_offset , 0)
 
-    print(flr(jump_timer), 15 * 8, 1)
+    -- slightly insane
+    print(flr(jump_timer), player.x * 8 + 3, player.y * 8 - 1 * 8)
+
     draw_player(player)
 end
