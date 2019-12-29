@@ -23,8 +23,9 @@ function update_player(player)
     end
 
     if (player.grounded) then
-        if (btn(2)) then
+        if (flr(jump_timer) == 0) then
             player.speed_y = player.jump_height
+            jump_timer = 4
         else
             player.speed_y = 0
             player.y = flr(player.y)
