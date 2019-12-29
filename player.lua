@@ -1,6 +1,6 @@
 function make_player(x, y)
     pl = {
-        sprite = 1,
+        sprite = config.player_sprite,
         x = x,
         y = y,
         speed_x = 0,
@@ -12,7 +12,7 @@ function make_player(x, y)
 end
 
 function update_player(player)
-    player.grounded = fget(mget(player.x, player.y + 1), 0)
+    player.grounded = fget(mget(player.x, player.y + 1), config.solid_flag)
 
     if (btn(0)) then
         player.speed_x -= 0.01
