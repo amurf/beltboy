@@ -53,7 +53,7 @@ end
 
 function reload()
     player  = shallowcopy(_initial_player)
-    objects = shallowcopy(objects)
+    objects = shallowcopy(_initial_objects)
 end
 
 function save()
