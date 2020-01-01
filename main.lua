@@ -3,6 +3,13 @@ config = {
     solid_flag = 0,
 }
 
+sprite_flags = {
+  solid = 0,
+  damage = 1,
+  pickup = 2,
+}
+
+
 -- set this to game to skip title screen
 state = "title"
 
