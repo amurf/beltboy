@@ -7,6 +7,7 @@ function make_player(x, y)
         speed_y = 0,
         jump_height = -0.5,
         score = 0,
+        jump_timer = 4,
     }
 
     return pl
@@ -24,9 +25,9 @@ function update_player(player)
     end
 
     if (player.grounded) then
-        if (flr(jump_timer) == 0) then
+        if (flr(player.jump_timer) == 0) then
             player.speed_y = player.jump_height
-            jump_timer = 4
+            player.jump_timer = 4
         else
             player.speed_y = 0
             player.y = flr(player.y)

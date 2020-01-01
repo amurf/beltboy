@@ -1,6 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 18
 __lua__
+#include util.lua
 #include player.lua
 #include object.lua
 #include game.lua
