@@ -14,9 +14,7 @@ function update_object(object)
 end
 
 function draw_object(object)
-    spr(object.sprite,
-    object.x * 8,
-    object.y * 8, 1, 1, false, false)
+    spr(object.sprite, object.x * 8, object.y * 8)
 end
 
 function check_collision(obj)
