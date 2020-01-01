@@ -4,6 +4,9 @@ objects = {}
 saved_player = {}
 saved_objects = {}
 
+_initial_player = {}
+_initial_objects = {}
+
 function game_init()
     for y=0,63 do for x=0,127 do
         local sprite = mget(x, y)
@@ -17,6 +20,9 @@ function game_init()
             mset(x, y, 0)
         end
     end end
+
+    _initial_player  = shallowcopy(player)
+    _initial_objects = shallowcopy(objects)
 end
 
 function game_update()
@@ -42,6 +48,11 @@ function game_draw()
 
     draw_player(player)
     foreach(objects, draw_object)
+end
+
+function reload()
+    player  = shallowcopy(_initial_player)
+    objects = shallowcopy(objects)
 end
 
 function save()
