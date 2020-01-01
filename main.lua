@@ -3,33 +3,28 @@ config = {
     solid_flag = 0,
 }
 
-function _init()
-    player = {}
-    jump_timer = 4
+state = "game"
 
-    for y=0,63 do for x=0,127 do
-        if (mget(x,y) == config.player_sprite) then
-            player = make_player(x, y)
-            mset(x, y, 0)
-        end
-    end end
+function _init()
+    local init_functions = {
+        game = game_init,
+    }
+
+    init_functions[state]()
 end
 
 function _update()
-    jump_timer -= 1 / 30
-    update_player(player)
+    local update_functions = {
+        game = game_update,
+    }
+
+    update_functions[state]()
 end
 
 function _draw()
-    cls()
-    map(0, 0, 0, 0)
+    local draw_functions = {
+        game = game_draw,
+    }
 
-    -- wip camera
-    camera_offset = 3 * 8
-    camera(player.x * 8 - camera_offset , 0)
-
-    -- slightly insane
-    print(flr(jump_timer), player.x * 8 + 3, player.y * 8 - 1 * 8)
-
-    draw_player(player)
+    draw_functions[state]()
 end

@@ -2,6 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 18
 __lua__
 #include player.lua
+#include game.lua
 #include main.lua
 __gfx__
 00000000666666666666666606666666666666600077777000aaaa000aaaaaaaaaaaaaaa00000000000000000000000000000000000000000000000000000000
