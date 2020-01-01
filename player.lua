@@ -34,6 +34,8 @@ function update_player(player)
         end
     else
         player.speed_y += 0.05
+        -- uncomment this to remove air momentum
+        -- player.speed_x = 0
     end
 
     player.x += player.speed_x
