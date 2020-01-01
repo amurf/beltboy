@@ -52,4 +52,6 @@ end
 
 function damage_collision(obj)
     -- handle deaths
+    -- right now anything kills
+    state = "end_game"
 end
