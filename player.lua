@@ -5,7 +5,8 @@ function make_player(x, y)
         y = y,
         speed_x = 0,
         speed_y = 0,
-        jump_height = -0.4,
+        jump_height = -0.5,
+        score = 0,
     }
 
     return pl
@@ -39,5 +40,7 @@ function update_player(player)
 end
 
 function draw_player(player)
-    spr(player.sprite, player.x * 8, player.y * 8, 1, 1, false, false)
+    spr(player.sprite,
+    player.x * 8,
+    player.y * 8, 1, 1, false, false)
 end
